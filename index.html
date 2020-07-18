@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LA County COVID-19 Data</title>
+	<script src='/static/js/jquery-3.5.1.min.js'></script>
+	<script src='/static/js/echarts.js'></script>
+	<script src='/static/js/line.js'></script>
+	<script src='/static/js/map.js'></script>
+</head>
+<body style="background-color:#F4F1F1">
+	<H1><font color="#990000">LA County COVID-19 Data Set and Tools for Data Scientists</font></H1>
+	<p> The following plots show time-series data for confirmed COVID-19 positive cases (daily, with linear and log-scaled axes) in the communities and cities within LA County that are showing the most number of cases. The data for these plots are collected from the press releases of <a href="http://publichealth.lacounty.gov/media/Coronavirus/">Los Angeles County Department of Public Health</a>. We have developed scripts in Python to fetch the data from the online press releases and save it in a machine-friendly JSON format. Please see our <a href="https://github.com/ANRGUSC/lacounty_covid19_data"> github repository containing open-source release of our software, data, and these plots</a>. We are planning to update the data and plots on a daily basis going forward, and providing other tools that may be useful for researchers and policy makers.
+
+	<p> We have also developed a rigorous hybrid model-and-data-driven Bayesian approach to risk scoring based on a time-varying SIR epidemic model that yields a simplified color-coded risk level for each community. The risk score corresponds to the probability of someone currently healthy getting infected with COVID-19 in the near future. Code is open-sourced <a href="https://github.com/ANRGUSC/covid19_risk_estimation">here</a>.
+
+	<div id="01" style="width:800px; height:400px; margin:40px;"></div>
+	<div id="02" style="width:800px; height:400px; margin:40px;"></div>
+	<div id="03" style="width:800px; height:400px; margin:40px;"></div>
+	<div id="04" style="width:600px; height:500px; margin:40px;"></div>
+	<div id="05" style="width:800px; height:400px; margin:40px;"></div>
+	<div id="06" style="width:800px; height:400px; margin:40px;"></div>
+	
+	<p> * The LA county did not release case data for communities and the death count for July 3rd, 4th, and 5th due to system upgrades. We have interpolated case data for those days and used that data to generate plots and risk scores. In the case of death counts, the death rate plots currently show zero deaths for July 3rd, 4th, and 5th. Starting from the 6th of July, the LA county started reporting case data for communities, death counts, and total cases for LA county. 
+
+	<p> This page is originally created on March 28, 2020, and it was last updated on July 15, 2020. <a href="https://anrg.usc.edu/www"> Autonomous Networks Research Group</a>, Viterbi School of Engineering, University of Southern California, Los Angeles, CA 90089.
+	<p>Contributors: Mehrdad Kiamari, Quynh Nguyen, Gowri Ramachandran, and Bhaskar Krishnamachari</p>
+</body>
+</html>
