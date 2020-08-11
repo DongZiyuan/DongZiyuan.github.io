@@ -1,60 +1,54 @@
-var option_series = [];
-var date_series = ['06-26', '06-27', '06-28', '06-29', '06-30', '07-01', '07-02'];
-var region = ['East Los Angeles', 'Florence', 'Boyle Heights', 'South Gate', 'Castaic', 'Downey', 'El Monte', 'Pomona', 'Compton', 'Glendale', 'Westlake', 'Vernon Central', 'Lynwood', 'Pacoima', 'Sylmar', 'Palmdale', 'North Hollywood', 'Panorama City', 'Van Nuys', 'Santa Clarita', 'Huntington Park', 'Wholesale District', 'Norwalk', 'San Pedro', 'Lancaster', 'Inglewood', 'West Covina', 'Central', 'Pico Rivera', 'West Vernon', 'Reseda', 'Montebello', 'Pico', 'Baldwin Park', 'Melrose', 'Bellflower', 'Paramount', 'South Park', 'Canoga Park', 'Vermont Vista', 'North Hills', 'Whittier', 'Hawthorne', 'Watts', 'Bell Gardens', 'Carson', 'Bell', 'Maywood', 'Azusa', 'Wilmington', 'Harvard Park', 'Century Palms/Cove', 'Covina', 'Northridge', 'Torrance', 'Willowbrook', 'Burbank', 'Temple', 'Sun Valley', 'Granada Hills', 'Athens', 'Gardena', 'Exposition Park', 'South Whittier', 'Arleta', 'Lincoln Heights', 'Winnetka', 'Koreatown', 'Hollywood', 'Highland Park', 'Wilshire Center', 'La Puente', 'Lakewood', 'Alhambra', 'Cudahy', 'El Sereno', 'West Adams', 'Santa Monica', 'Sherman Oaks', 'Hacienda Heights', 'West Whittier/Los Nietos', 'University Park', 'Green Meadows', 'Lake Balboa', 'Vermont Knolls', 'Glendora', 'Tarzana', 'East Hollywood', 'Monrovia', 'La Mirada', 'Monterey Park', 'Eagle Rock', 'Harbor Gateway', 'Woodland Hills', 'Downtown', 'Glassell Park', 'San Fernando', 'South El Monte', 'Silverlake', 'Valley Village', 'Chatsworth', 'Palms', 'Mission Hills', 'Walnut Park', 'Hyde Park', 'Baldwin Hills', 'Rowland Heights', 'West Hollywood', 'Rosemead', 'Little Armenia', 'Valinda', 'Temple City', 'San Gabriel', 'Lakeview Terrace', 'Altadena', 'Bassett', 'Beverly Hills', 'Little Bangladesh', 'Duarte', 'Harvard Heights', 'Cerritos', 'West Hills', 'Valley Glen', 'Sunland', 'Lennox', 'Encino', 'Historic Filipinotown', 'Redondo Beach', 'Culver City', 'Lawndale', 'San Jose Hills', 'West Los Angeles', 'Commerce', 'Harbor City', 'Arcadia', 'East Rancho Dominguez', 'Mt. Washington', 'Tujunga', 'Hawaiian Gardens', 'Diamond Bar', 'West Carson', 'Westchester', 'Santa Fe Springs', 'Mid', 'South Pasadena', 'San Dimas', 'Vermont Square', 'Alsace', 'Porter Ranch', 'Country Club Park', 'Rancho Palos Verdes', 'West Puente Valley', 'Del Rey', 'Manhattan Beach', 'Cloverdale/Cochran', 'Westwood', 'La Verne', 'Hancock Park', 'Mar Vista', 'Calabasas', 'Carthay', 'Crenshaw District', 'Hollywood Hills', 'Crestview', 'Brentwood', 'Elysian Valley', 'Val Verde', 'Studio City', 'Claremont', 'Leimert Park', 'Artesia', 'Northeast San Gabriel', 'Jefferson Park', 'Figueroa Park Square', 'Adams', 'Gramercy Place', 'Walnut', 'Signal Hill', 'Covina (Charter Oak)', 'Venice', 'South San Gabriel', 'Victoria Park', 'Lomita', 'Echo Park', 'Los Feliz', 'Atwater Village', 'Avocado Heights', 'La Canada Flintridge', 'Hermosa Beach', 'El Camino Village', 'Pacific Palisades', 'Athens Village', 'Miracle Mile', 'Stevenson Ranch', 'View Park/Windsor Hills', 'St Elmo Village', 'Thai Town', 'Quartz Hill', 'Agoura Hills', 'Lake Los Angeles', 'Beverlywood', 'La Rambla', 'La Crescenta', 'El Segundo', 'North Whittier', 'Beverly Crest', 'Century City', 'Malibu', 'Sun Village', 'Palos Verdes Estates', 'South Carthay', 'Manchester Square', 'Longwood', 'Wellington Square', 'Santa Monica Mountains', 'Cadillac', 'Bel Air', 'Playa Vista', 'Canyon Country', 'Wiseburn', 'Chinatown', 'Park La Brea', 'Reseda Ranch', 'Rosewood/West Rancho Dominguez', 'Little Tokyo', 'East La Mirada', 'Littlerock/Pearblossom', 'Exposition', 'Lafayette Square', 'Toluca Lake', 'East Whittier', 'Cheviot Hills', 'Ladera Heights', 'Rancho Dominguez', 'San Marino', 'Sierra Madre', 'Del Aire', 'Rancho Park', 'Elysian Park', 'West LA', 'Acton', 'Littlerock', 'Angelino Heights', 'Rolling Hills Estates', 'University Hills', 'Reynier Village', 'Shadow Hills', 'Marina del Rey', 'Vernon', 'Marina Peninsula', 'Sunrise Village', 'La Habra Heights', 'Regent Square', 'Irwindale', 'View Heights', 'Industry', 'Agua Dulce', 'Valencia', 'West Rancho Dominguez', 'Faircrest Heights', 'Westlake Village', 'Leona Valley', 'Kagel/Lopez Canyons', 'Palisades Highlands', 'Pearblossom/Llano', 'Rosewood', 'Harbor Pines', 'Bradbury', 'Twin Lakes/Oat Mountain', 'Toluca Terrace', 'Desert View Highlands', 'North Lancaster', 'Southeast Antelope Valley', 'Playa Del Rey', 'Saugus', 'Avalon', 'East Pasadena', 'Lake Manor', 'Pellissier Village', 'Rosewood/East Gardena', 'Toluca Woods', 'Angeles National Forest', 'San Pasqual', 'Hidden Hills', 'Anaverde', 'Elizabeth Lake', 'West Antelope Valley', 'Westhills', 'Newhall', 'Santa Catalina Island', 'Park LaBrea', 'Mandeville Canyon', 'Del Sur', 'Roosevelt', 'Rolling Hills', 'Llano', 'Westfield/Academy Hills', 'City', 'Littlerock/Juniper Hills', 'Hi Vista', 'Sycamore Square', 'South Antelope Valley', 'Lake Hughes', 'Bouquet Canyon', 'Brookside', 'South Edwards', 'Whittier Narrows', 'White Fence Farms', 'Franklin Canyon', 'Bandini Islands', 'West Chatsworth', 'Padua Hills', 'Sand Canyon', 'Palos Verdes Peninsula', 'San Clemente Island', 'Pasadena', 'Placerita Canyon', 'Charter Oak', 'East Lancaster', 'Universal City', 'San Francisquito Canyon/Bouquet Canyon', 'East Covina', 'Saugus/Canyon Country'];
-var cases = [[2237, 2295, 2370, 2447, 2507, 2542, 2604], [2045, 2089, 2143, 2228, 2310, 2346, 2395], [1572, 1611, 1654, 1704, 1757, 1768, 1821], [1510, 1552, 1611, 1668, 1723, 1756, 1798], [1774, 1777, 1781, 1786, 1792, 1791, 1792], [1385, 1421, 1481, 1529, 1608, 1637, 1678], [1348, 1387, 1431, 1465, 1521, 1556, 1606], [1279, 1335, 1412, 1462, 1522, 1555, 1602], [1281, 1316, 1378, 1424, 1455, 1490, 1516], [1342, 1353, 1375, 1408, 1432, 1455, 1473], [1293, 1304, 1322, 1346, 1372, 1390, 1406], [1215, 1232, 1263, 1298, 1328, 1347, 1377], [1208, 1218, 1255, 1289, 1330, 1347, 1374], [1214, 1228, 1242, 1274, 1302, 1316, 1346], [1207, 1231, 1260, 1295, 1310, 1321, 1345], [1169, 1198, 1227, 1254, 1289, 1308, 1328], [1125, 1159, 1191, 1235, 1257, 1275, 1302], [1197, 1207, 1221, 1238, 1248, 1256, 1270], [1159, 1166, 1186, 1206, 1216, 1230, 1243], [1050, 1078, 1111, 1155, 1192, 1207, 1236], [1054, 1073, 1105, 1141, 1175, 1196, 1234], [1104, 1128, 1164, 1187, 1192, 1196, 1217], [983, 1025, 1080, 1114, 1155, 1192, 1216], [1123, 1134, 1152, 1162, 1177, 1186, 1194], [983, 1032, 1056, 1081, 1109, 1128, 1159], [939, 961, 982, 1010, 1040, 1060, 1075], [802, 835, 882, 920, 974, 1000, 1027], [907, 918, 943, 968, 974, 994, 1012], [857, 878, 907, 939, 963, 975, 992], [866, 880, 895, 938, 959, 981, 990], [897, 907, 927, 944, 957, 969, 983], [793, 820, 854, 883, 921, 939, 963], [883, 889, 900, 917, 939, 948, 957], [760, 785, 824, 865, 903, 929, 952], [812, 823, 847, 874, 902, 915, 930], [765, 789, 817, 849, 869, 881, 913], [743, 758, 788, 819, 847, 869, 896], [791, 802, 814, 837, 857, 878, 883], [747, 757, 765, 790, 806, 814, 824], [716, 734, 743, 771, 791, 807, 816], [721, 740, 753, 766, 774, 780, 797], [616, 642, 669, 702, 742, 759, 783], [676, 695, 720, 734, 749, 757, 763], [643, 656, 675, 697, 718, 724, 744], [618, 636, 662, 678, 703, 715, 722], [619, 633, 646, 655, 665, 673, 687], [609, 618, 631, 652, 663, 672, 678], [575, 582, 596, 612, 625, 629, 641], [519, 529, 551, 584, 602, 615, 629], [520, 527, 549, 569, 598, 604, 621], [547, 558, 563, 583, 593, 604, 620], [541, 548, 565, 581, 594, 606, 618], [472, 482, 515, 535, 562, 575, 602], [545, 553, 563, 578, 584, 587, 601], [532, 542, 555, 564, 582, 594, 599], [508, 522, 544, 554, 570, 585, 594], [536, 542, 555, 568, 580, 586, 590], [516, 527, 541, 554, 566, 575, 587], [480, 487, 499, 521, 535, 546, 562], [504, 513, 524, 532, 536, 540, 545], [426, 442, 461, 477, 500, 512, 528], [468, 480, 495, 502, 513, 520, 524], [437, 444, 461, 479, 495, 504, 519], [394, 408, 427, 451, 478, 498, 518], [442, 450, 454, 482, 494, 498, 510], [449, 457, 471, 482, 495, 500, 509], [441, 447, 459, 476, 486, 496, 506], [453, 457, 470, 480, 495, 500, 506], [415, 428, 442, 452, 469, 477, 490], [428, 443, 451, 464, 469, 474, 483], [423, 430, 448, 465, 473, 477, 481], [368, 391, 413, 430, 446, 458, 477], [381, 394, 409, 426, 440, 457, 475], [392, 405, 417, 440, 450, 457, 474], [420, 427, 436, 444, 460, 463, 473], [398, 403, 409, 424, 434, 440, 455], [378, 383, 394, 405, 414, 419, 426], [385, 393, 398, 401, 407, 414, 419], [342, 355, 368, 382, 391, 400, 407], [299, 307, 324, 337, 353, 363, 374], [315, 327, 334, 348, 361, 366, 372], [332, 341, 346, 350, 353, 362, 365], [320, 325, 325, 336, 347, 354, 360], [308, 320, 326, 345, 349, 352, 357], [313, 319, 326, 335, 344, 352, 355], [277, 286, 296, 314, 340, 344, 354], [327, 329, 339, 343, 349, 350, 353], [310, 310, 311, 321, 330, 337, 346], [294, 306, 315, 321, 330, 338, 342], [290, 306, 312, 322, 326, 329, 340], [294, 300, 305, 324, 333, 335, 338], [297, 305, 309, 313, 317, 323, 332], [272, 277, 290, 293, 301, 311, 322], [270, 276, 285, 300, 306, 308, 320], [254, 261, 272, 289, 303, 314, 317], [282, 286, 292, 296, 303, 306, 311], [279, 289, 292, 300, 302, 303, 310], [268, 275, 279, 282, 294, 301, 306], [264, 269, 275, 286, 299, 302, 306], [288, 289, 291, 298, 302, 303, 304], [269, 272, 272, 280, 287, 289, 296], [263, 276, 281, 283, 287, 290, 295], [252, 258, 268, 280, 284, 285, 295], [254, 258, 269, 276, 282, 288, 294], [246, 250, 256, 266, 275, 282, 288], [255, 261, 268, 274, 278, 281, 282], [242, 248, 257, 260, 265, 273, 278], [240, 242, 246, 255, 264, 271, 276], [217, 227, 238, 244, 256, 262, 270], [240, 244, 247, 250, 251, 256, 258], [225, 229, 235, 238, 246, 250, 256], [231, 235, 237, 239, 243, 247, 255], [219, 223, 229, 236, 242, 245, 254], [219, 223, 226, 238, 245, 248, 253], [214, 217, 226, 233, 237, 240, 248], [216, 217, 224, 235, 241, 245, 248], [207, 218, 229, 235, 237, 243, 246], [221, 225, 231, 237, 242, 242, 245], [209, 211, 219, 228, 232, 236, 242], [206, 209, 215, 223, 231, 235, 238], [199, 207, 210, 219, 224, 230, 237], [208, 210, 212, 218, 221, 227, 234], [208, 211, 215, 217, 221, 225, 229], [209, 212, 214, 215, 225, 226, 227], [184, 192, 197, 203, 208, 218, 221], [188, 192, 198, 208, 214, 216, 221], [204, 207, 208, 212, 217, 220, 221], [184, 190, 197, 207, 211, 217, 219], [193, 197, 203, 205, 210, 214, 218], [186, 190, 193, 196, 200, 202, 213], [170, 179, 191, 195, 199, 206, 211], [171, 173, 179, 187, 193, 200, 208], [178, 183, 185, 189, 198, 203, 208], [182, 183, 190, 193, 200, 201, 205], [167, 173, 183, 185, 190, 197, 204], [163, 168, 175, 179, 189, 195, 198], [159, 167, 169, 178, 185, 189, 196], [173, 174, 181, 183, 185, 187, 188], [162, 166, 169, 174, 180, 183, 186], [127, 132, 146, 154, 166, 179, 181], [152, 152, 159, 163, 165, 168, 172], [152, 156, 158, 162, 167, 170, 172], [127, 132, 139, 150, 163, 168, 171], [154, 157, 159, 161, 162, 164, 170], [153, 154, 155, 156, 158, 162, 166], [128, 129, 134, 142, 149, 155, 166], [146, 146, 149, 156, 162, 164, 165], [138, 143, 145, 146, 149, 151, 153], [139, 139, 140, 143, 145, 146, 149], [142, 142, 142, 146, 146, 147, 148], [126, 129, 134, 137, 139, 140, 142], [108, 115, 120, 123, 128, 133, 141], [113, 116, 120, 129, 135, 137, 141], [112, 121, 124, 131, 135, 137, 140], [122, 122, 123, 127, 131, 132, 138], [117, 122, 128, 131, 135, 136, 137], [109, 113, 121, 125, 132, 134, 136], [114, 120, 122, 127, 127, 130, 135], [117, 118, 123, 123, 126, 130, 132], [115, 117, 119, 124, 126, 130, 132], [110, 113, 114, 117, 121, 128, 129], [112, 113, 116, 120, 124, 126, 129], [110, 111, 116, 116, 123, 124, 126], [111, 116, 121, 122, 122, 123, 124], [106, 109, 113, 116, 118, 119, 120], [106, 108, 110, 113, 119, 119, 119], [25, 27, 29, 29, 29, 29, 29], [100, 104, 105, 108, 111, 112, 114], [95, 96, 98, 103, 106, 108, 113], [91, 96, 101, 108, 110, 111, 112], [93, 95, 98, 101, 104, 106, 110], [95, 96, 98, 99, 102, 102, 107], [85, 87, 89, 93, 98, 99, 106], [91, 92, 93, 99, 103, 104, 106], [94, 94, 95, 96, 101, 103, 105], [101, 101, 102, 103, 104, 104, 104], [86, 86, 92, 94, 97, 101, 104], [82, 85, 90, 93, 97, 101, 102], [86, 87, 93, 95, 96, 97, 97], [86, 89, 92, 92, 94, 94, 95], [76, 78, 80, 81, 84, 87, 89], [81, 83, 84, 88, 89, 89, 89], [75, 76, 78, 80, 81, 84, 88], [80, 82, 82, 82, 84, 86, 86], [76, 77, 77, 79, 79, 83, 84], [70, 71, 73, 79, 84, 84, 84], [65, 66, 70, 72, 74, 77, 82], [72, 74, 75, 78, 78, 79, 79], [63, 69, 72, 74, 77, 77, 79], [70, 70, 72, 73, 73, 74, 75], [63, 63, 64, 69, 71, 73, 73], [58, 59, 61, 67, 69, 72, 73], [60, 61, 64, 66, 69, 69, 71], [54, 55, 57, 59, 61, 66, 68], [58, 60, 62, 64, 66, 66, 66], [60, 61, 62, 62, 65, 65, 65], [52, 53, 53, 57, 60, 63, 65], [56, 58, 58, 60, 62, 62, 64], [50, 51, 52, 54, 58, 61, 62], [49, 49, 52, 52, 55, 60, 62], [55, 57, 57, 57, 59, 60, 62], [55, 57, 58, 58, 59, 61, 61], [45, 47, 48, 53, 55, 57, 58], [48, 49, 51, 51, 54, 57, 57], [48, 50, 52, 52, 52, 54, 57], [52, 52, 52, 56, 56, 56, 56], [51, 52, 52, 52, 52, 54, 55], [49, 49, 49, 51, 52, 52, 53], [41, 48, 49, 52, 53, 53, 53], [49, 50, 50, 50, 52, 52, 53], [45, 46, 46, 50, 50, 51, 52], [45, 45, 46, 49, 51, 51, 52], [44, 45, 49, 50, 50, 51, 52], [40, 44, 44, 46, 49, 49, 51], [38, 39, 42, 46, 48, 49, 51], [47, 47, 48, 49, 49, 49, 49], [43, 44, 44, 45, 46, 48, 49], [43, 43, 45, 46, 46, 47, 47], [42, 43, 43, 45, 46, 47, 47], [35, 38, 40, 41, 43, 43, 43], [34, 36, 37, 38, 40, 40, 42], [33, 35, 36, 37, 39, 39, 40], [37, 38, 38, 40, 40, 40, 40], [34, 34, 34, 36, 39, 39, 39], [34, 34, 35, 36, 36, 37, 38], [30, 31, 31, 32, 34, 35, 37], [32, 32, 35, 35, 35, 35, 35], [20, 20, 25, 29, 31, 34, 35], [29, 30, 30, 32, 34, 35, 35], [27, 27, 30, 31, 32, 34, 34], [22, 22, 22, 23, 30, 33, 33], [30, 30, 30, 30, 30, 31, 33], [27, 27, 28, 30, 30, 32, 32], [27, 27, 29, 30, 30, 30, 31], [26, 28, 29, 29, 29, 30, 31], [28, 28, 28, 28, 30, 30, 31], [25, 25, 27, 28, 29, 29, 29], [25, 25, 25, 25, 27, 28, 28], [23, 23, 26, 26, 26, 26, 26], [24, 25, 25, 25, 25, 25, 25], [20, 21, 21, 22, 24, 25, 25], [22, 22, 22, 23, 23, 24, 25], [23, 23, 23, 23, 24, 24, 24], [22, 23, 22, 22, 23, 24, 24], [19, 19, 19, 20, 20, 20, 22], [22, 22, 22, 22, 22, 22, 22], [16, 18, 19, 20, 20, 20, 21], [20, 20, 20, 20, 20, 20, 21], [9, 9, 11, 14, 14, 14, 14], [19, 19, 19, 20, 20, 20, 20], [11, 11, 11, 11, 16, 16, 16], [13, 15, 15, 15, 15, 15, 16], [13, 13, 14, 15, 16, 16, 16], [11, 11, 11, 12, 13, 14, 16], [15, 15, 15, 14, 14, 14, 15], [13, 14, 14, 14, 13, 13, 13], [12, 13, 13, 13, 13, 13, 14], [12, 13, 13, 13, 13, 13, 13], [10, 10, 11, 11, 11, 12, 12], [10, 10, 10, 10, 10, 10, 11], [8, 8, 8, 8, 8, 8, 10], [5, 6, 7, 7, 7, 10, 10], [8, 8, 8, 9, 9, 9, 10], [9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9, 9, 9, 9], [8, 8, 8, 8, 9, 9, 9], [9, 9, 9, 9, 9, 9, 9], [8, 8, 8, 8, 8, 9, 9], [7, 7, 7, 7, 8, 8, 8], [8, 8, 8, 8, 8, 8, 8], [7, 7, 8, 8, 8, 8, 8], [7, 7, 7, 7, 7, 7, 7], [3, 3, 3, 4, 6, 7, 7], [5, 6, 6, 6, 6, 6, 6], [5, 5, 5, 5, 6, 6, 6], [1, 1, 2, 4, 6, 6, 6], [4, 4, 4, 4, 5, 5, 6], [5, 5, 5, 5, 5, 5, 6], [3, 3, 3, 3, 5, 5, 6], [2, 2, 2, 2, 3, 5, 5], [4, 4, 4, 4, 4, 4, 4], [4, 4, 4, 4, 4, 4, 4], [4, 4, 4, 4, 4, 4, 4], [4, 4, 4, 4, 4, 4, 4], [4, 4, 4, 4, 4, 4, 4], [4, 4, 4, 4, 4, 4, 4], [3, 3, 3, 3, 3, 3, 3], [3, 3, 3, 3, 3, 3, 3], [3, 3, 3, 3, 3, 3, 3], [3, 3, 3, 3, 3, 3, 3], [3], [3, 3, 3, 3, 3, 3, 3], [3, 3, 3, 3, 3, 3, 3], [1, 1, 2, 2, 2, 3, 3], [2, 2, 2, 2, 2, 2, 2], [1, 1, 1, 1, 1, 1, 2], [1, 1, 1, 1, 2, 2, 2], [2], [2, 2, 2, 2, 2, 2, 2], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]];
+function drawMap(url, id, title, low, high) {
+	var myChart = echarts.init(document.getElementById(id));
+	$.getJSON(url, function(result) {
+		var regions = [];
+		var values = [];
+		var option_series = [];
+	    $.each(result, function(r, v) {
+	        regions.push(r);
+	        values.push(v);
+	    });
 
-for(var i = 0; i < date_series.length; i++) {
-	var temp = [];
-    for(var j = 0; j < region.length; j++) {
-        temp.push({
-            name: region[j],
-            value: cases[j][i]
-        });
-    }
-    option_series.push({
-    	series: {
-    		data: temp
-    	}
-    });
-}
+	    for(let i = 0; i < dates.length; i++) {
+    		let temp = [];
+    		for(let j = 0; j < values.length; j++) {
+        		temp.push({
+        			name: regions[j],
+        			value: values[j][i]});
+    		}
+    		option_series.push({series: {data: temp}});
+		}
 
-$(function() {
-	var myChart = echarts.init(document.getElementById('04'));
-	$.get('/static/json/la_county.json', function(geoJson) {
-		echarts.registerMap('Los Angeles County', geoJson, {});
 		var option = {
 			baseOption: {
 				timeline: {
-		            axisType: 'category',
-		            realtime: false,
-		            loop: true,
-		            autoPlay: true,
-		            playInterval: 1000,
-            		left: 'center',
-            		width: '90%',
-		            tooltip: {
-                		formatter: date_series
-            		},
-		            data: date_series
-		        },
-			    tooltip: {
+					axisType: 'category',
+				    realtime: true,
+				    loop: true,
+				    autoPlay: true,
+				    playInterval: 750,
+		            symbol: 'None',
+		            left: 'center',
+		            width: '90%',
+				    tooltip: {formatter: dates},
+				    data: dates
+				},
+				tooltip: {
 			        trigger: 'item',
-	            	formatter: '{b}<br/>{c}'
+		        	formatter: '{b}<br/>{c}'
 			    },
 			    visualMap: {
-		            min: 10,
-		            max: 3000,
+		            min: low,
+		            max: high,
 		            text:['High', 'Low'],
 		            top: 'center',
 		            calculable: true,
-		            inRange: {
-		                color: ['lightgreen', 'yellow', 'red']
-		            }
+		            inRange: { color: ['lightgreen', 'yellow', 'red']}
 		        },
 		        title: {
-	            	text: 'Heat Map of Confirmed Cases over Time',
-	            	subtext: 'Update by: 2020-07-02'
-	        	},
+		        	text: 'Heat Map of ' + title + ' over Time for LA County',
+		        	subtext: 'Update by:' + today.toDateString()
+		    	},
 			    series: {
 		        	name: 'Los Angeles County',
 		            type: 'map',
@@ -67,4 +61,12 @@ $(function() {
 		};
 		myChart.setOption(option);
 	});
-})
+}
+
+$(function(){
+	$.get('/static/json/la_county.json', function(geoJson) {
+		echarts.registerMap('Los Angeles County', geoJson, {});
+		drawMap("/static/json/region_density.json", "07", "Case Density", 0, 0.08);
+		drawMap("/static/json/region_R.json", "08", "Risk Score", 0, 10)
+	});
+});
