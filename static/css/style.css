@@ -1,4 +1,711 @@
-body {
-    background: Yellow;
-    color: white;
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../webfonts/google.eot");
+    src: local('Open Sans'), local('OpenSans'), url("../fonts/google.eot") format('embedded-opentype'), url("../fonts/google.woff") format('woff');
 }
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: #ffff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #0000;
+    outline: none;
+    &: hover {text-decoration: none;}
+}
+
+/*----------------------------------------------------
+ 1. Document Setup
+------------------------------------------------------*/
+.wrapper {width: 100%;}
+
+.noPadd {padding: 0px !important;}
+
+.container .row {margin: 0px;}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 27px;
+    font-weight: 400;
+    padding-bottom: 38px;
+    margin: 0px;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 48px;
+    line-height: 57px;
+    font-weight: 700;
+    margin: 0px;
+    padding-bottom: 8px;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 36px;
+    line-height: 38px;
+    padding-bottom: 0px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0px;
+    border-bottom: #ef7674 6px solid;
+    padding-bottom: 9px;
+    display: inline-block;
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    padding-bottom: 3px;
+    font-weight: 400;
+    margin: 0px;
+}
+
+h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    margin: 0px;
+    color: #5c4c5c;
+}
+
+h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 25px;
+    padding-bottom: 5px;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.heading {
+    text-align: center;
+    padding-bottom: 45px;
+}
+
+.container {max-width: 1080px;}
+
+/*----------------------------------------------------
+ 2. Header Style
+------------------------------------------------------*/
+header {position: relative;}
+
+.banner {
+    overflow: hidden;
+    margin: 0 auto !important;
+    background: #CACACA;
+    display: none;
+}
+
+.bannerText {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 35%;
+    text-align: center;
+    padding: 30px 0 30px;
+    max-width: 960px;
+    z-index: 2;
+    animation-name: textBox;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+    /* Safari and Chrome: */
+    -webkit-animation-name: textBox;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-play-state: running;
+}
+
+.bannerText p {
+    font-size: 18px;
+    color: #fff;
+    padding-bottom: 40px;
+}
+
+.mbnt {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    line-height: 40px;
+    color: #fff;
+    font-size: 15px;
+    background-color: #EF7674;
+    text-transform: uppercase;
+    padding: 0 30px;
+    margin: 0 10px;
+    text-decoration: none;
+    outline: none;
+}
+
+.mbnt:focus,
+.mbnt:hover,
+.mbnt:active {
+    color: #eaeaea;
+    text-decoration: none;
+    outline: none;
+}
+
+.bannerText h1 {/*text-transform: uppercase;*/}
+
+/*----------------------------------------------------
+ 3. Menu Style
+------------------------------------------------------*/
+.menu {
+    margin-top: 0px;
+    position: static;
+    left: 0px;
+    right: 0px;
+}
+
+.navwrapper .container {
+    padding: 0;
+    width: auto;
+}
+
+.navbar-header {display: none;}
+
+.nav > li > a {display: inline-block;}
+
+.navbar-nav > li {
+    float: none;
+    display: inline;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+    text-align: center;
+    float: none;
+}
+
+.navbar-toggle {
+    margin-top: 8px;
+    background-color: #4c404d;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {}
+
+.navbar-brand {margin-top: 4px;}
+
+.nav .menuItem a {font-size: 19px;}
+
+.navbar-wrapper {
+    margin-top: 0px;
+    position: relative;
+    z-index: 15;
+    background: #ffffff;
+}
+
+.navbar-wrapper .container {padding: 0px;}
+
+.navbar-collapse {padding: 0;}
+
+.isStuck {
+    left: 0;
+    width: 100%;
+}
+
+.navbar.navbar-inverse.navbar-static-top {
+    margin: 0px auto;
+    background: #ffffff;
+    color: #4c404d;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.navbar.navbar-inverse.navbar-static-top a.navbar-brand {line-height: 43px;}
+
+.navbar.navbar-inverse.navbar-static-top a {
+    color: #4c404d;
+    padding: 0 25px;
+    line-height: 140px;
+    text-align: center;
+    font-weight: 800;
+    // transition-duration: 0.2s;
+    // -webkit-transition-duration: 0.2s;
+}
+
+.navbar.navbar-inverse.navbar-static-top .nav li.first {padding-left: 0;}
+
+.navbar.navbar-inverse.navbar-static-top .nav li {padding: 0 18px 0 20px;}
+
+.navbar.navbar-inverse.navbar-static-top .nav li a {
+    padding: 0;
+    letter-spacing: -1px;
+}
+
+.navbar.navbar-inverse.navbar-static-top a:hover {
+    background: #ffffff;
+    color: #ef7674;
+}
+
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:focus {
+    background: #ffffff;
+    color: #ef7674;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    background: #ffffff;
+    color: #ef7674;
+}
+
+.navbar-inverse .navbar-nav>.active>a:hover {
+    background: #ffffff;
+    color: #ef7674;
+}
+
+/*----------------------------------------------------
+ 4. About Me Style
+------------------------------------------------------*/
+.aboutme {
+    background: #f8f8f8;
+    color: #897f8a;
+    position: relative;
+}
+
+.aboutme .container {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.aboutme .heading h2 {
+    color: #5c4c5c;
+    display: inline-block;
+}
+
+#description {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+#description p {padding-bottom: 10px;}
+
+.btnDownload {
+    -webkit-border-radius: 5px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    border: 3px solid #5b4c5c;
+    padding: 10px 10px;
+    display: inline-block;
+    color: #5c4c5c;
+    transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+    margin-bottom: 10px;
+}
+
+.btnDownload:hover {
+    background: #5c4c5c;
+    color: #ffff;
+    text-decoration: none;
+}
+
+/*----------------------------------------------------
+ 5. Technical Skills Style
+------------------------------------------------------*/
+.technical .container {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.technical h2 {
+    color: #5c4c5c;
+    margin-bottom: 20px;
+}
+
+.technical .heading p {
+    padding-bottom: 40px;
+    max-width: 800px;
+    text-align: justify;
+    display: block;
+    margin: 0 auto;
+    color: #84868d;
+    line-height: 20px;
+}
+
+.technical .skillsArea {padding: 0px;}
+
+.technical .skills {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 0px;
+    float: none;
+}
+
+.technical .skills h4 {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 10px;
+    padding-bottom: 10px;
+    color: #5c4c5c;
+}
+
+.chart {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 110px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chart canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.percent {
+    display: inline-block;
+    font-size: 20px;
+    color: #5c4c5c;
+    line-height: 120px;
+    z-index: 2;
+    font-weight: bold;
+}
+
+.percent:after {
+    content: '%';
+    margin-left: .1em;
+    font-size: .8em;
+}
+
+/*----------------------------------------------------
+ 6. Experience Style
+------------------------------------------------------*/
+.exprience {background: #f8f8f8;}
+
+.exprience .container {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.exprience h2 {
+    color: #5c4c5c;
+    margin-bottom: 20px;
+}
+
+.exprience .heading p {
+    padding-bottom: 40px;
+    max-width: 800px;
+    text-align: justify;
+    display: block;
+    margin: 0 auto;
+    color: #84868d;
+    line-height: 20px;
+}
+
+.workYear {
+    color: #ffff;
+    line-height: 30px;
+}
+
+.workYear span {
+    display: block;
+    font-size: 20px;
+    padding: 0 20px;
+    white-space: nowrap;
+    float: right;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.prevY {background-color: #ef7674;}
+.afterY {background-color: #5c4c5c;}
+
+.circle {
+    margin-left: -25px;
+    margin-top: 30px;
+    float: left;
+    width: 18px;
+    height: 18px;
+    background: url(../images/circle.svg) no-repeat 0 0 #f8f8f8;
+}
+
+.content {
+    width: auto;
+    padding: 0 25px 5px 25px;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.content h4 {
+    color: #5c4c5c;
+    padding-bottom: 1px;
+    margin-top: -5px;
+    font-weight: bold;
+}
+
+.content h5 {
+    font-size: 15px;
+    color: #5c4c5c;
+}
+
+.content p, li{
+    color: #897f8a;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.workDetails .rightArea {
+    border-left: dashed 2px #897f8a;
+    padding-bottom: 40px;
+}
+
+.workDetails:last-child .rightArea {padding-bottom: 0px;}
+
+.workDetails:last-child .rightArea .content p:last-child {padding-bottom: 0px;}
+
+/*----------------------------------------------------
+ 7. Projects Style
+------------------------------------------------------*/
+.projects .container {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.projects h2 {
+    color: #5c4c5c;
+    margin-bottom: 20px;
+}
+
+.projects .heading p {
+    color: #84868d;
+    max-width: 800px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.proBox {
+    padding: 0px 20px 40px
+}
+
+.proBoxCon {
+    border-bottom: #84868d 5px solid;
+}
+
+.proBoxCon a {
+    text-decoration: underline;
+    color: #ef7674;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.proBoxCon ul {
+    color: #897f8a;
+    font-size: 15px;
+    padding-top: 20px;
+}
+
+.proBoxCon p {
+    color: #897f8a;
+    font-size: 15px;
+    text-align: right;
+    padding-bottom: 10px;
+}
+
+/*----------------------------------------------------
+ 8. Contact Me Style
+------------------------------------------------------*/
+.contact {background: #f8f8f8;}
+
+.contact .container {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.contact h2 {
+    color: #5c4c5c;
+    margin-bottom: 20px;
+}
+
+.topCon {padding-bottom: 0px !important;}
+
+.contactDetails {background: #f8f8f8;}
+
+.contactDetails .container {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.contactDetails p, a {
+    color: #897f8a;
+    font-size: 15px;
+    line-height: 20px;
+    padding-bottom: 10px;
+}
+
+.contactDetails p a:hover {
+    color: #5c4c5c;
+    text-decoration: none;
+}
+
+.contactDetails img {height: 15px; padding-right: 15px;}
+
+/*----------------------------------------------------
+ 9. Footer Style
+------------------------------------------------------*/
+.footer {background: #5c4c5c;}
+
+.footer .container {
+    padding: 50px 0 50px;
+    position: relative;
+}
+
+.totop {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ABABAB;
+    line-height: 30px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.totop img {height: 30px;}
+
+/*---------------------------------------------------------------------------------
+ 10. Responsive style
+-------------------------------------------------------------------------------*/
+@media screen and (min-width: 1200px) {.workYear {}}
+
+@media screen and (max-width: 999px) {
+    .navbar.navbar-inverse.navbar-static-top .nav li {padding-left: 25px;}
+    .navbar.navbar-inverse.navbar-static-top a {line-height: 140px;}
+    .nav .menuItem a {font-size: 14px;}
+}
+
+@media screen and (max-width: 990px) {
+    .navbar.navbar-inverse.navbar-static-top a {}
+    .bannerText {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .bannerText h1 {
+        font-size: 65px;
+        line-height: 70px;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    body {min-height: 700px;}
+}
+
+@media screen and (max-width: 992px) {.aboutme {padding: 15px;}}
+
+@media screen and (min-width: 768px) {.aboutme {/*padding:15px;*/}}
+
+@media screen and (max-width: 768px) {
+    .navbar-wrapper .container,
+    .navwrapper .container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .navbar.navbar-inverse.navbar-static-top a {line-height: 43px;}
+}
+
+@media screen and (max-width: 767px) {
+    .navbar-header {display: block;}
+    .workYear {
+        margin: 0 auto 20px;
+        overflow: hidden;
+    }
+    .workYear span {
+        width: 100%;
+        margin-right: 0;
+    }
+    .workDetails .rightArea {border-left: none;}
+    .arrowpart {background: none;}
+    .content {
+        margin-left: 0px;
+        padding: 0;
+    }
+    ul.navbar-nav li a {display: block;}
+}
+
+@media screen and (max-width: 650px) {
+    #wrapper {top: 200px !important;}
+    .bannerText {
+        top: 25%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .bannerText h1 {
+        font-size: 42px;
+        line-height: 48px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar.navbar-inverse.navbar-static-top a {
+        line-height: 17px;
+        padding-top: 11px;
+        padding-bottom: 11px;
+    }
+    .navbar.navbar-inverse.navbar-static-top a.navbar-brand {line-height: 22px;}
+    .bannerText {top: 10%;}
+    .bannerText h1 {
+        font-size: 34px;
+        line-height: 38px;
+    }
+    .bannerText p {
+        font-size: 16px;
+        padding-bottom: 32px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .bntDownload {
+        font-size: 13px;
+        padding: 16px 14px;
+    }
+}
+
+.comments {margin-top: 15px;}
+
+.comments h4 {padding-bottom: 0;}
+
+body, p, h1, h2, h3, h4, h5 {font-family: 'Verdana', sans-serif;}
+
+a:hover {text-decoration: none;}
