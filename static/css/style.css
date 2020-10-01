@@ -205,7 +205,7 @@ header {position: relative;}
 
 .navbar-toggle {
     margin-top: 8px;
-    background-color: #4c404d;
+    background-color: #5c4c5c;
 }
 
 .navbar-inverse .navbar-toggle:hover,
@@ -234,7 +234,7 @@ header {position: relative;}
 .navbar.navbar-inverse.navbar-static-top {
     margin: 0px auto;
     background: #ffffff;
-    color: #4c404d;
+    color: #5c4c5c;
     border: none;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
@@ -244,7 +244,7 @@ header {position: relative;}
 .navbar.navbar-inverse.navbar-static-top a.navbar-brand {line-height: 43px;}
 
 .navbar.navbar-inverse.navbar-static-top a {
-    color: #4c404d;
+    color: #5c4c5c;
     padding: 0 25px;
     line-height: 140px;
     text-align: center;
@@ -551,33 +551,24 @@ header {position: relative;}
     padding-bottom: 40px;
 }
 
-.contact h2 {
+.contact .heading h2 {
     color: #5c4c5c;
     margin-bottom: 20px;
 }
 
-.topCon {padding-bottom: 0px !important;}
-
-.contactDetails {background: #f8f8f8;}
-
-.contactDetails .container {
-    padding-top: 5px;
-    padding-bottom: 10px;
-}
-
-.contactDetails p, a {
+.conDetails p, a {
     color: #897f8a;
     font-size: 15px;
     line-height: 20px;
     padding-bottom: 10px;
 }
 
-.contactDetails p a:hover {
+.conDetails a:hover {
     color: #5c4c5c;
     text-decoration: none;
 }
 
-.contactDetails img {height: 15px; padding-right: 15px;}
+.conDetails img {height: 18px; padding-right: 15px;}
 
 /*----------------------------------------------------
  9. Footer Style
